@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/sell-your-house", label: "Sell Your House" },
@@ -30,6 +29,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   // Homepage has green hero — white text at top (like other pages), dark after scroll
   // Other pages have dark heroes — same behavior
   const lightText = !scrolled;
@@ -38,7 +48,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-lg border-b border-gray-200/60 shadow-sm"
+          ? "bg-white border-b border-gray-200/60 shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -86,7 +96,7 @@ export default function Navbar() {
           <button
             type="button"
             className={`lg:hidden p-2 transition-colors duration-200 ${
-              lightText ? "text-white" : "text-[#2F343A]"
+              lightText && !mobileOpen ? "text-white" : "text-[#2F343A]"
             }`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -97,49 +107,40 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
-            className="lg:hidden fixed inset-0 top-18 z-40 bg-white/95 backdrop-blur-xl"
+      {/* Overlay */}
+      <div
+        className={`lg:hidden fixed inset-0 top-18 z-30 bg-black/40 transition-opacity duration-300 ${
+          mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setMobileOpen(false)}
+      />
+
+      {/* Panel */}
+      <div
+        className={`lg:hidden fixed inset-0 top-18 z-40 bg-white transition-all duration-300 ease-out ${
+          mobileOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col px-6 py-8 gap-1">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="block rounded-lg px-4 py-3 text-base font-medium text-[#2F343A] transition-colors hover:bg-[#F5F5F5]"
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link
+            href="/sell-your-house"
+            className="mt-4 block rounded-lg bg-[#3FA380] px-5 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-[#358E6E]"
+            onClick={() => setMobileOpen(false)}
           >
-            <div className="flex flex-col px-6 py-8 gap-1">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.04, duration: 0.3 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="block rounded-lg px-4 py-3 text-base font-medium text-[#2F343A] transition-colors hover:bg-[#F5F5F5]"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </motion.div>
-              ))}
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: navLinks.length * 0.04, duration: 0.3 }}
-              >
-                <Link
-                  href="/sell-your-house"
-                  className="mt-4 block rounded-lg bg-[#3FA380] px-5 py-3 text-center text-base font-semibold text-white transition-colors hover:bg-[#358E6E]"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Get My Cash Offer
-                </Link>
-              </motion.div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            Get My Cash Offer
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 }

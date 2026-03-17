@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 
 interface FAQItemProps {
   q: string;
@@ -29,27 +28,20 @@ export function FAQItem({ q, a, variant = "dark" }: FAQItemProps) {
         <span className={`text-base font-semibold sm:text-lg pr-4 ${questionColor}`}>
           {q}
         </span>
-        <motion.div
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
-          className="shrink-0"
+        <div
+          className={`shrink-0 transition-transform duration-250 ease-out ${open ? "rotate-180" : ""}`}
         >
           <ChevronDown size={20} className={chevronColor} />
-        </motion.div>
+        </div>
       </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <p className={`pb-5 leading-relaxed ${answerColor}`}>{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <div
+        className="grid transition-[grid-template-rows] duration-250 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
+      >
+        <div className="overflow-hidden">
+          <p className={`pb-5 leading-relaxed ${answerColor}`}>{a}</p>
+        </div>
+      </div>
     </div>
   );
 }

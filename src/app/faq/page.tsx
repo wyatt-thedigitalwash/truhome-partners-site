@@ -109,7 +109,6 @@ export default function FAQPage() {
               Selling Process
             </p>
             <FAQSection
-              title="Selling Process"
               faqs={sellingProcessFaqs}
               variant="light"
             />
@@ -123,8 +122,10 @@ export default function FAQPage() {
       <section className="relative overflow-hidden bg-white py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
         <div className="relative mx-auto max-w-3xl">
           <FadeIn>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3FA380] mb-6">
+              Costs & Fees
+            </p>
             <FAQSection
-              title="Costs & Fees"
               faqs={costsFeesFaqs}
               variant="light"
             />
@@ -138,8 +139,10 @@ export default function FAQPage() {
       <section className="relative overflow-hidden bg-[#F5F5F5] py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
         <div className="relative mx-auto max-w-3xl">
           <FadeIn>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3FA380] mb-6">
+              Property Conditions
+            </p>
             <FAQSection
-              title="Property Conditions"
               faqs={propertyConditionsFaqs}
               variant="light"
             />
@@ -153,8 +156,10 @@ export default function FAQPage() {
       <section className="relative overflow-hidden bg-white py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
         <div className="relative mx-auto max-w-3xl">
           <FadeIn>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3FA380] mb-6">
+              Timeline & Logistics
+            </p>
             <FAQSection
-              title="Timeline & Logistics"
               faqs={timelineLogisticsFaqs}
               variant="light"
             />
