@@ -51,10 +51,11 @@ const staggerContainer: Variants = {
 };
 
 const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30, scale: 0.97 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
@@ -162,5 +163,101 @@ export function CountUp({
       {value.toFixed(decimals)}
       {suffix}
     </span>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  WordReveal — staggered word-by-word text reveal with blur          */
+/* ------------------------------------------------------------------ */
+
+interface WordRevealProps {
+  text: string;
+  className?: string;
+  delay?: number;
+  staggerDelay?: number;
+}
+
+export function WordReveal({
+  text,
+  className,
+  delay = 0,
+  staggerDelay = 0.06,
+}: WordRevealProps) {
+  const words = text.split(" ");
+
+  const containerVariants: Variants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: staggerDelay,
+        delayChildren: delay,
+      },
+    },
+  };
+
+  const wordVariants: Variants = {
+    hidden: { opacity: 0, y: 20, filter: "blur(4px)" },
+    visible: {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] },
+    },
+  };
+
+  return (
+    <motion.span
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className={className}
+      aria-label={text}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          variants={wordVariants}
+          className="inline-block mr-[0.25em]"
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Marquee — infinite horizontal scroll, CSS-driven                  */
+/* ------------------------------------------------------------------ */
+
+interface MarqueeProps {
+  children: ReactNode;
+  speed?: number;
+  pauseOnHover?: boolean;
+  className?: string;
+}
+
+export function Marquee({
+  children,
+  speed = 40,
+  pauseOnHover = true,
+  className,
+}: MarqueeProps) {
+  return (
+    <div
+      className={`group overflow-hidden ${className ?? ""}`}
+      role="marquee"
+      aria-live="off"
+    >
+      <div
+        className={`flex w-max animate-marquee ${
+          pauseOnHover ? "group-hover:[animation-play-state:paused]" : ""
+        }`}
+        style={{ animationDuration: `${speed}s` }}
+      >
+        {children}
+        {children}
+      </div>
+    </div>
   );
 }

@@ -31,10 +31,10 @@ export default function FloatingCTA() {
           >
             <Link
               href="/sell-your-house"
-              className="inline-flex items-center gap-2 rounded-full bg-[#3FA380] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 ease-out hover:bg-[#358E6E] hover:shadow-xl hover:scale-[1.03] active:scale-[0.97] animate-floating-cta"
+              className="group inline-flex items-center gap-2 rounded-full bg-[#3FA380] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-200 ease-out hover:bg-[#358E6E] hover:shadow-xl hover:scale-[1.03] active:scale-[0.97] animate-floating-cta"
             >
               Get My Cash Offer
-              <ArrowRight size={16} />
+              <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
             </Link>
           </motion.div>
 
@@ -49,10 +49,10 @@ export default function FloatingCTA() {
             <div className="bg-[#2F343A] px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.15)]">
               <Link
                 href="/sell-your-house"
-                className="flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#2F343A] transition-all duration-200 ease-out hover:bg-[#F5F5F5] active:scale-[0.98]"
+                className="group flex items-center justify-center gap-2 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#2F343A] transition-all duration-200 ease-out hover:bg-[#F5F5F5] active:scale-[0.98]"
               >
                 Get My Cash Offer
-                <ArrowRight size={16} />
+                <ArrowRight size={16} className="transition-transform duration-200 group-hover:translate-x-0.5" />
               </Link>
             </div>
           </motion.div>

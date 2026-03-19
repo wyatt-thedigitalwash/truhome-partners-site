@@ -168,9 +168,9 @@ export default function AboutPage() {
               const Icon = value.icon;
               return (
                 <StaggerItem key={value.title}>
-                  <div className="rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#F5F5F5]">
-                      <Icon size={24} className="text-[#3FA380]" />
+                  <div className="group shimmer-card rounded-2xl border border-gray-200 bg-white p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-[#3FA380]/40 hover:bg-gradient-to-b hover:from-white hover:to-[#3FA380]/[0.03]">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-xl bg-[#F5F5F5] transition-colors duration-300 group-hover:bg-[#3FA380]/10">
+                      <Icon size={24} className="text-[#3FA380] transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <h3 className="mt-5 text-lg font-bold text-[#2F343A]">
                       {value.title}

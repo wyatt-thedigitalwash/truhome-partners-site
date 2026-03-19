@@ -171,10 +171,10 @@ export default function ContactPage() {
                 return (
                   <div
                     key={item.label}
-                    className="flex items-start gap-4 rounded-xl border border-gray-200 p-5"
+                    className="group shimmer-card flex items-start gap-4 rounded-xl border border-gray-200 p-5 transition-all duration-300 ease-out hover:border-[#3FA380]/40 hover:shadow-sm"
                   >
-                    <div className="flex-shrink-0 rounded-lg bg-[#F5F5F5] p-3">
-                      <Icon size={20} className="text-[#3FA380]" />
+                    <div className="flex-shrink-0 rounded-lg bg-[#F5F5F5] p-3 transition-colors duration-300 group-hover:bg-[#3FA380]/10">
+                      <Icon size={20} className="text-[#3FA380] transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <div>
                       <p className="text-sm font-medium text-[#6B6B6B]">

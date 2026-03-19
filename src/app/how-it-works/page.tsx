@@ -181,9 +181,9 @@ export default function HowItWorksPage() {
           <StaggerContainer className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {/* Card 1 — No Middlemen */}
             <StaggerItem>
-              <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
+              <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3FA380]">
-                  <Users size={22} className="text-gray-300" />
+                  <Users size={22} className="text-gray-300 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   No Middlemen
@@ -197,9 +197,9 @@ export default function HowItWorksPage() {
 
             {/* Card 2 — Transparent Offers */}
             <StaggerItem>
-              <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
+              <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3FA380]">
-                  <FileText size={22} className="text-gray-300" />
+                  <FileText size={22} className="text-gray-300 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   Transparent Offers
@@ -213,9 +213,9 @@ export default function HowItWorksPage() {
 
             {/* Card 3 — Local Team */}
             <StaggerItem>
-              <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
+              <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3FA380]">
-                  <MapPin size={22} className="text-gray-300" />
+                  <MapPin size={22} className="text-gray-300 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   Local Team
@@ -229,9 +229,9 @@ export default function HowItWorksPage() {
 
             {/* Card 4 — Flexible Closing */}
             <StaggerItem>
-              <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
+              <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#3FA380]">
-                  <Calendar size={22} className="text-gray-300" />
+                  <Calendar size={22} className="text-gray-300 transition-transform duration-300 group-hover:scale-110" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-white">
                   Flexible Closing

@@ -21,6 +21,7 @@ import {
   HeroEntrance,
   StaggerContainer,
   StaggerItem,
+  WordReveal,
 } from "@/components/motion";
 import { FAQSection } from "@/components/FAQAccordion";
 
@@ -130,9 +131,9 @@ export default function SellYourHouse() {
             <div>
               <HeroEntrance>
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.08]">
-                  Sell Your Tampa Bay House Fast &mdash;{" "}
-                  <span className="text-[#F5F5F5]/60">
-                    No Fees, No Hassle
+                  Sell Your Tampa Bay House Fast &mdash;
+                  <span className="block text-[#F5F5F5]/60">
+                    <WordReveal text="No Fees, No Hassle" delay={0.4} />
                   </span>
                 </h1>
               </HeroEntrance>
@@ -337,9 +338,9 @@ export default function SellYourHouse() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {painPoints.map((item) => (
               <StaggerItem key={item.title}>
-                <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-6 lg:p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5">
-                    <item.icon size={24} className="text-[#F5F5F5]" />
+                <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-6 lg:p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 transition-colors duration-300 group-hover:bg-[#3FA380]/20">
+                    <item.icon size={24} className="text-[#F5F5F5] transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-white">
                     {item.title}
@@ -389,7 +390,7 @@ export default function SellYourHouse() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* TruHome Partners Column */}
             <StaggerItem>
-              <div className="rounded-2xl border-2 border-emerald-200 bg-white p-8 lg:p-10 shadow-lg transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-xl">
+              <div className="shimmer-card rounded-2xl border border-emerald-200 bg-white p-8 lg:p-10 shadow-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(63,163,128,0.12)]">
                 <div className="mb-6">
                   <span className="inline-block rounded-full bg-emerald-50 px-4 py-1.5 text-sm font-semibold text-emerald-700">
                     Recommended
@@ -416,7 +417,7 @@ export default function SellYourHouse() {
 
             {/* Traditional Agent Column */}
             <StaggerItem>
-              <div className="rounded-2xl border border-gray-200 bg-white/70 p-8 lg:p-10 transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
+              <div className="shimmer-card rounded-2xl border border-gray-200 bg-white/70 p-8 lg:p-10 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg">
                 <div className="mb-6">
                   <span className="inline-block rounded-full bg-gray-100 px-4 py-1.5 text-sm font-semibold text-[#6B6B6B]">
                     Traditional

@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   Phone,
@@ -20,10 +19,9 @@ import {
   Hammer,
   UserX,
   MapPin,
-  ChevronDown,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
 import CTABanner from "@/components/CTABanner";
+import { FAQSection } from "@/components/FAQAccordion";
 
 import {
   FadeIn,
@@ -31,6 +29,7 @@ import {
   StaggerContainer,
   StaggerItem,
   CountUp,
+  WordReveal,
 } from "@/components/motion";
 
 /* ================================================================== */
@@ -209,48 +208,6 @@ const faqs = [
 ];
 
 /* ================================================================== */
-/*  FAQ ACCORDION ITEM                                                 */
-/* ================================================================== */
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div className="border-b border-white/[0.08]">
-      <button
-        type="button"
-        onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between py-5 text-left"
-      >
-        <span className="text-base font-semibold text-white sm:text-lg pr-4">
-          {q}
-        </span>
-        <motion.div
-          animate={{ rotate: open ? 180 : 0 }}
-          transition={{ duration: 0.25 }}
-          className="shrink-0"
-        >
-          <ChevronDown size={20} className="text-gray-400" />
-        </motion.div>
-      </button>
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <p className="pb-5 text-gray-400 leading-relaxed">{a}</p>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
-
-/* ================================================================== */
 /*  PAGE                                                               */
 /* ================================================================== */
 
@@ -272,7 +229,7 @@ export default function Home() {
                 <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08]">
                   Sell Your Tampa Bay Home
                   <span className="block text-white/70">
-                    Fast &mdash; For Cash
+                    <WordReveal text="Fast — For Cash" delay={0.4} />
                   </span>
                 </h1>
               </HeroEntrance>
@@ -446,7 +403,7 @@ export default function Home() {
             <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {steps.map((step, index) => (
                 <StaggerItem key={step.title}>
-                  <div className="relative text-center p-8 lg:p-10 rounded-2xl border border-gray-200 bg-white transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-t-2 hover:border-t-[#3FA380]">
+                  <div className="shimmer-card relative text-center p-8 lg:p-10 rounded-2xl border border-gray-200 bg-white transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-[#3FA380]/40">
                     <div className="relative mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-[#3FA380]">
                       <step.icon size={28} className="text-white" />
                     </div>
@@ -491,9 +448,9 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {situations.map((item) => (
               <StaggerItem key={item.title}>
-                <div className="rounded-2xl border border-white/10 bg-[#2F343A]/40 p-6 lg:p-8 transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[rgba(245,240,235,0.15)] hover:shadow-[0_0_20px_rgba(245,240,235,0.04)]">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5">
-                    <item.icon size={24} className="text-[#F5F5F5]" />
+                <div className="group shimmer-card-dark rounded-2xl border border-white/10 bg-[#2F343A]/40 p-6 lg:p-8 transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[#3FA380]/30 hover:shadow-[0_0_30px_rgba(63,163,128,0.15)]">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/5 transition-colors duration-300 group-hover:bg-[#3FA380]/20">
+                    <item.icon size={24} className="text-[#F5F5F5] transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-white">
                     {item.title}
@@ -543,9 +500,9 @@ export default function Home() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {trustSignals.map((signal) => (
               <StaggerItem key={signal.title}>
-                <div className="rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 text-center transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                    <signal.icon size={26} className="text-[#3FA380]" />
+                <div className="group shimmer-card rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-[#3FA380]/40 hover:bg-gradient-to-b hover:from-white hover:to-[#3FA380]/[0.03]">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F5F5] transition-colors duration-300 group-hover:bg-[#3FA380]/10">
+                    <signal.icon size={26} className="text-[#3FA380] transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <div className="mt-4 text-2xl font-bold text-[#3FA380]">
                     {signal.stat}
@@ -735,11 +692,7 @@ export default function Home() {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <div className="rounded-2xl border border-white/10 bg-[#2F343A]/30 px-6 sm:px-8">
-              {faqs.map((faq) => (
-                <FAQItem key={faq.q} q={faq.q} a={faq.a} />
-              ))}
-            </div>
+            <FAQSection faqs={faqs} variant="dark" />
           </FadeIn>
 
           <FadeIn delay={0.2} className="mt-8 text-center">

@@ -84,9 +84,9 @@ export default function BuyersPage() {
           <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {benefits.map((benefit) => (
               <StaggerItem key={benefit.title}>
-                <div className="rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 text-center transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg">
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F5F5]">
-                    <benefit.icon size={26} className="text-[#3FA380]" />
+                <div className="group shimmer-card rounded-2xl border border-gray-200 bg-white p-6 lg:p-8 text-center transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-[#3FA380]/40 hover:bg-gradient-to-b hover:from-white hover:to-[#3FA380]/[0.03]">
+                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-[#F5F5F5] transition-colors duration-300 group-hover:bg-[#3FA380]/10">
+                    <benefit.icon size={26} className="text-[#3FA380] transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <h3 className="mt-4 text-lg font-bold text-[#2F343A]">
                     {benefit.title}
