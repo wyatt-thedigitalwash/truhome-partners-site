@@ -343,7 +343,7 @@ export default function Home() {
                         className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                       />
                       <span className="text-xs text-[#6B6B6B] leading-relaxed">
-                        I agree to the{" "}
+                        I agree to{" "}
                         <a href="/terms" target="_blank" className="text-[#3FA380] underline underline-offset-2 hover:text-[#358E6E]">
                           Terms &amp; Conditions
                         </a>{" "}
@@ -360,8 +360,13 @@ export default function Home() {
                         className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                       />
                       <span className="text-xs text-[#6B6B6B] leading-relaxed">
-                        I consent to receive SMS messages from TruHome Partners.
-                        Message &amp; data rates may apply. Reply STOP to opt out.
+                        By submitting this form, you consent to receive SMS
+                        messages and/or calls from TruHome Partners. To
+                        unsubscribe, follow the instructions provided in our
+                        communications. Msg &amp; data rates may apply for SMS.
+                        Your information is secure and will not be sold to third
+                        parties. Message frequency varies. Text HELP for Help.
+                        Text STOP to cancel.
                       </span>
                     </label>
                   </div>
