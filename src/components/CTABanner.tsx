@@ -14,7 +14,7 @@ export default function CTABanner({
   subtext = "Get your no-obligation cash offer today. We buy houses in any condition — close in as little as 7 days.",
 }: CTABannerProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#2F343A] via-[#353B42] to-[#2A2F35] py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
+    <section className="relative overflow-hidden bg-[#2F343A] py-24 px-4 sm:px-6 lg:px-8 lg:py-32">
       {/* Radial glow behind button area */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="h-[500px] w-[500px] rounded-full bg-[#F5F5F5]/[0.04] blur-3xl" />

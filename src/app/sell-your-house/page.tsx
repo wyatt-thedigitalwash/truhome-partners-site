@@ -292,6 +292,38 @@ export default function SellYourHouse() {
                     </div>
                   </div>
 
+                  {/* Compliance checkboxes */}
+                  <div className="space-y-3">
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
+                      />
+                      <span className="text-xs text-[#6B6B6B] leading-relaxed">
+                        I agree to the{" "}
+                        <a href="/terms" target="_blank" className="text-[#3FA380] underline underline-offset-2 hover:text-[#358E6E]">
+                          Terms &amp; Conditions
+                        </a>{" "}
+                        and{" "}
+                        <a href="/privacy" target="_blank" className="text-[#3FA380] underline underline-offset-2 hover:text-[#358E6E]">
+                          Privacy Policy
+                        </a>.
+                      </span>
+                    </label>
+                    <label className="flex items-start gap-2.5 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        required
+                        className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
+                      />
+                      <span className="text-xs text-[#6B6B6B] leading-relaxed">
+                        I consent to receive SMS messages from TruHome Partners.
+                        Message &amp; data rates may apply. Reply STOP to opt out.
+                      </span>
+                    </label>
+                  </div>
+
                   <button
                     type="submit"
                     className="w-full rounded-lg bg-[#3FA380] px-6 py-3.5 text-base font-semibold text-white transition-all duration-200 ease-out hover:bg-[#358E6E] hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] animate-pulse-glow"

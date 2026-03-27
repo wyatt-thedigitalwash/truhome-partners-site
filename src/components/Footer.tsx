@@ -13,6 +13,8 @@ const resourceLinks = [
   { href: "/faq", label: "FAQ" },
   { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
+  { href: "/terms", label: "Terms & Conditions" },
+  { href: "/privacy", label: "Privacy Policy" },
 ];
 
 export default function Footer() {
