@@ -291,7 +291,7 @@ export default function BuyersPage() {
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                     />
                     <span className="text-xs text-[#6B6B6B] leading-relaxed">
-                      I agree to{" "}
+                      I agree to the{" "}
                       <a href="/terms" target="_blank" className="text-[#3FA380] underline underline-offset-2 hover:text-[#358E6E]">
                         Terms &amp; Conditions
                       </a>{" "}
@@ -308,13 +308,15 @@ export default function BuyersPage() {
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                     />
                     <span className="text-xs text-[#6B6B6B] leading-relaxed">
-                      By submitting this form, you consent to receive SMS
-                      messages and/or calls from TruHome Partners. To
-                      unsubscribe, follow the instructions provided in our
-                      communications. Msg &amp; data rates may apply for SMS.
-                      Your information is secure and will not be sold to third
-                      parties. Message frequency varies. Text HELP for Help.
-                      Text STOP to cancel.
+                      I agree to receive transactional or conversational
+                      communications from TruHome Partners via text messages,
+                      phone calls, and emails related to my real estate
+                      inquiry, such as property details, responses, and
+                      appointment confirmations. Message frequency varies.
+                      Reply STOP to opt out. Reply HELP for help. Msg &amp;
+                      data rates may apply. Your information is secure and
+                      will not be sold or shared with third parties or
+                      affiliates for promotional purposes.
                     </span>
                   </label>
                 </div>
