@@ -287,7 +287,6 @@ export default function BuyersPage() {
                   <label className="flex items-start gap-2.5 cursor-pointer">
                     <input
                       type="checkbox"
-                      required
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                     />
                     <span className="text-xs text-[#6B6B6B] leading-relaxed">
@@ -304,7 +303,6 @@ export default function BuyersPage() {
                   <label className="flex items-start gap-2.5 cursor-pointer">
                     <input
                       type="checkbox"
-                      required
                       className="mt-0.5 h-4 w-4 shrink-0 rounded border-gray-300 text-[#3FA380] focus:ring-[#3FA380]"
                     />
                     <span className="text-xs text-[#6B6B6B] leading-relaxed">
